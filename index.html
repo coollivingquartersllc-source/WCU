@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why Choose Us — Cool Living Quarters</title>
+  <link rel="icon" type="image/png" href="assets/Gemini_Generated_Image_kt5v91kt5v91kt5v-removebg-preview.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --navy:    #00457C;
+      --navy-dk: #002f57;
+      --navy-lt: #1a6faa;
+      --sky:     #e8f4fd;
+      --white:   #ffffff;
+      --off:     #f7f9fc;
+      --gray:    #6b7280;
+      --gray-lt: #e5e7eb;
+      --text:    #1f2937;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--text); font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+    h1,h2,h3,h4 { font-family: 'Quicksand', sans-serif; font-weight: 700; color: var(--navy); line-height: 1.3; }
+    a { color: var(--navy); text-decoration: none; }
+    a:hover { color: var(--navy-lt); }
+
+    .top-bar { background: var(--navy); color: rgba(255,255,255,0.85); font-size: 0.85rem; padding: 0.5rem 0; text-align: center; font-family: 'Quicksand', sans-serif; font-weight: 500; letter-spacing: 0.03em; }
+    .top-bar a { color: rgba(255,255,255,0.85); font-weight: 600; }
+    .top-bar a:hover { color: #fff; }
+
+    header { background: var(--white); border-bottom: 2px solid var(--navy); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,69,124,0.08); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 1.5rem; max-width: 1140px; margin: 0 auto; }
+    .logo-wrap { display: flex; align-items: center; gap: 0.75rem; }
+    .logo-wrap img { width: 56px; height: 56px; object-fit: contain; }
+    .logo-name { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--navy); letter-spacing: 0.02em; line-height: 1.1; }
+    .logo-tagline { font-size: 0.7rem; color: var(--gray); font-family: 'Quicksand', sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+    nav ul { display: flex; list-style: none; gap: 0.25rem; align-items: center; }
+    nav ul a { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 0.88rem; color: var(--navy); padding: 0.45rem 0.9rem; border-radius: 6px; transition: background 0.2s, color 0.2s; }
+    nav ul a:hover, nav ul a.active { background: var(--sky); color: var(--navy-dk); }
+    .nav-cta { background: var(--navy) !important; color: #fff !important; border-radius: 6px !important; padding: 0.45rem 1.1rem !important; }
+    .nav-cta:hover { background: var(--navy-lt) !important; }
+    .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.4rem; flex-direction: column; gap: 5px; }
+    .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; }
+
+    .breadcrumb { background: var(--off); border-bottom: 1px solid var(--gray-lt); padding: 0.65rem 1.5rem; font-size: 0.82rem; font-family: 'Quicksand', sans-serif; font-weight: 600; }
+    .breadcrumb .inner { max-width: 1140px; margin: 0 auto; display: flex; gap: 0.5rem; align-items: center; color: var(--gray); }
+    .breadcrumb a { color: var(--navy-lt); }
+    .breadcrumb .sep { color: var(--gray-lt); }
+
+    .page-hero { background: linear-gradient(135deg, var(--navy-dk) 0%, var(--navy) 60%, var(--navy-lt) 100%); color: #fff; padding: 4rem 1.5rem 3.5rem; text-align: center; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); pointer-events: none; }
+    .page-hero .label { font-family: 'Quicksand', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #7dd3fc; display: block; margin-bottom: 0.6rem; opacity: 0; animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s forwards; }
+    .page-hero h1 { font-size: clamp(2rem, 5vw, 3rem); color: #fff; margin-bottom: 1rem; opacity: 0; animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.35s forwards; }
+    .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto; opacity: 0; animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.5s forwards; }
+
+    /* DIFFERENTIATOR INTRO */
+    .intro-section { background: var(--off); padding: 4rem 1.5rem; border-bottom: 1px solid var(--gray-lt); }
+    .intro-inner { max-width: 860px; margin: 0 auto; text-align: center; }
+    .section-label { font-family: 'Quicksand', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--navy-lt); margin-bottom: 0.5rem; display: block; }
+    .intro-inner h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); margin-bottom: 1rem; }
+    .intro-inner p { color: var(--gray); font-size: 1.05rem; max-width: 700px; margin: 0 auto; }
+
+    /* COMPARISON TABLE */
+    .compare-section { padding: 4rem 1.5rem; max-width: 1000px; margin: 0 auto; }
+    .compare-section h2 { text-align: center; font-size: clamp(1.4rem, 3vw, 2rem); margin-bottom: 0.5rem; }
+    .compare-section .sub { text-align: center; color: var(--gray); margin-bottom: 2.5rem; font-size: 0.97rem; }
+    .compare-table { width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,69,124,0.08); }
+    .compare-table thead tr { background: var(--navy); color: #fff; }
+    .compare-table th { font-family: 'Quicksand', sans-serif; font-size: 0.88rem; font-weight: 700; padding: 1rem 1.25rem; text-align: left; letter-spacing: 0.04em; }
+    .compare-table th:first-child { width: 40%; }
+    .compare-table th:not(:first-child) { text-align: center; }
+    .compare-table td { padding: 0.9rem 1.25rem; font-size: 0.9rem; border-bottom: 1px solid var(--gray-lt); color: var(--text); }
+    .compare-table td:not(:first-child) { text-align: center; }
+    .compare-table tbody tr:nth-child(even) { background: var(--off); }
+    .compare-table tbody tr:hover { background: var(--sky); }
+    .check { color: #16a34a; font-size: 1.2rem; font-weight: 700; }
+    .cross { color: #9ca3af; font-size: 1.1rem; }
+    .col-clq { color: var(--navy); font-weight: 700; background: rgba(0,69,124,0.04); }
+
+    /* PILLARS */
+    .pillars-section { background: var(--off); padding: 5rem 1.5rem; border-top: 1px solid var(--gray-lt); }
+    .pillars-inner { max-width: 1140px; margin: 0 auto; }
+    .pillars-header { text-align: center; margin-bottom: 3rem; }
+    .pillars-header h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 0.75rem; }
+    .pillars-header p { color: var(--gray); max-width: 560px; margin: 0 auto; }
+    .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .pillar-card { background: var(--white); border: 1px solid var(--gray-lt); border-radius: 14px; padding: 2rem 1.5rem; transition: box-shadow 0.3s, transform 0.3s; }
+    .pillar-card:hover { box-shadow: 0 8px 30px rgba(0,69,124,0.10); transform: translateY(-4px); }
+    .pillar-icon { width: 54px; height: 54px; background: var(--sky); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+    .pillar-icon svg { width: 26px; height: 26px; fill: var(--navy); }
+    .pillar-card h3 { font-size: 1.05rem; margin-bottom: 0.6rem; }
+    .pillar-card p { font-size: 0.88rem; color: var(--gray); line-height: 1.7; }
+
+    /* STATS STRIP */
+    .stats-strip { background: var(--navy); color: #fff; padding: 3.5rem 1.5rem; }
+    .stats-grid { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
+    .stat-item .number { font-family: 'Quicksand', sans-serif; font-size: 2.5rem; font-weight: 700; color: #7dd3fc; line-height: 1.1; }
+    .stat-item .unit { font-family: 'Quicksand', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 0.3rem; }
+    .stat-item .desc { font-size: 0.88rem; color: rgba(255,255,255,0.75); margin-top: 0.2rem; }
+
+    /* TESTIMONIAL */
+    .testimonial-section { padding: 5rem 1.5rem; max-width: 800px; margin: 0 auto; text-align: center; }
+    .testimonial-section blockquote { font-size: clamp(1.1rem, 2.5vw, 1.4rem); color: var(--navy); font-family: 'Quicksand', sans-serif; font-weight: 600; line-height: 1.6; border-left: none; position: relative; padding: 0 2rem; }
+    .testimonial-section blockquote::before { content: '\201C'; font-size: 5rem; color: var(--sky); position: absolute; top: -1.5rem; left: 0; font-family: Georgia, serif; line-height: 1; }
+    .testimonial-section cite { display: block; margin-top: 1.5rem; font-style: normal; font-size: 0.88rem; color: var(--gray); font-family: 'Quicksand', sans-serif; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+
+    /* MISSION BANNER */
+    .mission-banner { background: var(--sky); border-top: 1px solid rgba(0,69,124,0.15); border-bottom: 1px solid rgba(0,69,124,0.15); padding: 3.5rem 1.5rem; text-align: center; }
+    .mission-banner h2 { font-size: clamp(1.3rem, 3vw, 1.9rem); max-width: 720px; margin: 0 auto 1rem; }
+    .mission-banner p { color: var(--gray); max-width: 560px; margin: 0 auto 2rem; }
+    .btn { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 0.92rem; padding: 0.85rem 2rem; border-radius: 8px; letter-spacing: 0.03em; transition: all 0.25s; cursor: pointer; text-decoration: none; display: inline-block; }
+    .btn-navy { background: var(--navy); color: #fff; }
+    .btn-navy:hover { background: var(--navy-lt); transform: translateY(-2px); color: #fff; }
+
+    footer { background: var(--navy-dk); color: rgba(255,255,255,0.6); text-align: center; padding: 1.5rem; font-size: 0.82rem; font-family: 'Quicksand', sans-serif; }
+    footer a { color: rgba(255,255,255,0.6); }
+    footer a:hover { color: #fff; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      .menu-toggle { display: flex; }
+      nav { display: none; width: 100%; }
+      nav.open { display: block; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); border-top: 1px solid var(--gray-lt); box-shadow: 0 8px 20px rgba(0,0,0,0.1); padding: 1rem; }
+      nav.open ul { flex-direction: column; gap: 0.25rem; }
+      nav.open ul a { display: block; padding: 0.65rem 1rem; }
+      .header-inner { position: relative; flex-wrap: wrap; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .compare-table th, .compare-table td { padding: 0.7rem 0.75rem; font-size: 0.82rem; }
+    }
+    @media (max-width: 480px) { .logo-tagline { display: none; } .stats-grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    24/7 Referrals &amp; Intake: <a href="tel:8442665226">(844) 266-5226</a> &nbsp;|&nbsp; info@coollivingquarters.com &nbsp;|&nbsp; Houston, Texas
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo-wrap">
+        <img src="assets/Gemini_Generated_Image_kt5v91kt5v91kt5v-removebg-preview.png" alt="Cool Living Quarters Logo"/>
+        <div>
+          <div class="logo-name">Cool Living Quarters</div>
+          <div class="logo-tagline">Compassionate Care At Its Finest</div>
+        </div>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <nav id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="why-choose-us.html" class="active">Why Choose Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="referral.html" class="nav-cta">Make a Referral</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="breadcrumb">
+    <div class="inner">
+      <a href="index.html">Home</a>
+      <span class="sep">›</span>
+      <span>Why Choose Us</span>
+    </div>
+  </div>
+
+  <section class="page-hero">
+    <span class="label">Our Difference</span>
+    <h1>Why Choose Us</h1>
+    <p>Cool Living Quarters isn't a standard group home. We're a licensed Residential Treatment Center built around a higher standard of care, comfort, and clinical excellence.</p>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro-section">
+    <div class="intro-inner reveal">
+      <span class="section-label">The CLQ Difference</span>
+      <h2>More Than a Group Home</h2>
+      <p>Most group homes provide basic shelter and supervision. Cool Living Quarters delivers licensed, clinical-level treatment in a luxury residential setting — because the youth in our care deserve an environment that genuinely supports their healing, not just their housing.</p>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="compare-section">
+    <h2 class="reveal">CLQ vs. Standard Group Home</h2>
+    <p class="sub reveal" style="transition-delay:0.1s">See how our level of care compares to traditional placement options.</p>
+    <table class="compare-table reveal" style="transition-delay:0.15s">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th style="background: rgba(255,255,255,0.15);">Cool Living Quarters</th>
+          <th>Standard Group Home</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Licensed Residential Treatment Center</td><td class="check col-clq">✓</td><td class="cross">✗</td></tr>
+        <tr><td>Authorized Crisis Intervention On-Site</td><td class="check col-clq">✓</td><td class="cross">✗</td></tr>
+        <tr><td>Human Trafficking Recovery Track</td><td class="check col-clq">✓</td><td class="cross">✗</td></tr>
+        <tr><td>24/7 Certified Clinical Staff</td><td class="check col-clq">✓</td><td class="cross">✗</td></tr>
+        <tr><td>Individualized Treatment Plans</td><td class="check col-clq">✓</td><td class="cross">✗</td></tr>
+        <tr><td>Luxury Home in Upscale Neighborhood</td><td class="check col-clq">✓</td><td class="cross">✗</td></tr>
+        <tr><td>High Privacy &amp; Secure Location</td><td class="check col-clq">✓</td><td class="cross">Varies</td></tr>
+        <tr><td>DFPS Licensed &amp; Compliant</td><td class="check col-clq">✓</td><td class="check">✓</td></tr>
+        <tr><td>Structured Daily Programming</td><td class="check col-clq">✓</td><td class="check">✓</td></tr>
+        <tr><td>Coordinated Agency Communication</td><td class="check col-clq">✓</td><td class="check">Varies</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="pillars-section">
+    <div class="pillars-inner">
+      <div class="pillars-header reveal">
+        <span class="section-label">Our Core Pillars</span>
+        <h2>What Sets Us Apart</h2>
+        <p>Six principles that define every decision we make and every resident we serve.</p>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar-card reveal">
+          <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+          <h3>Clinical Excellence</h3>
+          <p>Our licensed clinical team delivers evidence-based, trauma-informed treatment — going well beyond the supervision model of traditional group homes.</p>
+        </div>
+        <div class="pillar-card reveal" style="transition-delay:0.08s">
+          <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
+          <h3>Luxury Home Settings</h3>
+          <p>Spacious, beautifully appointed homes in Houston's finest neighborhoods — because environment is part of treatment.</p>
+        </div>
+        <div class="pillar-card reveal" style="transition-delay:0.16s">
+          <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg></div>
+          <h3>Uncompromising Privacy</h3>
+          <p>Exact home addresses are disclosed only upon confirmed placement — protecting each resident's identity, safety, and dignity at all times.</p>
+        </div>
+        <div class="pillar-card reveal" style="transition-delay:0.24s">
+          <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+          <h3>Authorized Crisis Response</h3>
+          <p>Certified crisis intervention protocols on-site — meaning our residents receive immediate, therapeutic de-escalation without unnecessary disruption.</p>
+        </div>
+        <div class="pillar-card reveal" style="transition-delay:0.32s">
+          <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+          <h3>Specialized Survivor Care</h3>
+          <p>A dedicated track for human trafficking survivors, developed in partnership with victim advocacy professionals and delivered with the utmost sensitivity.</p>
+        </div>
+        <div class="pillar-card reveal" style="transition-delay:0.4s">
+          <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg></div>
+          <h3>Transparent Agency Partnership</h3>
+          <p>We keep caseworkers, placing agencies, and guardians informed every step of the way — with clear communication and thorough documentation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-strip">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="number">24/7</div>
+        <div class="unit">Availability</div>
+        <div class="desc">Clinical &amp; crisis staff on-call every hour of every day</div>
+      </div>
+      <div class="stat-item reveal" style="transition-delay:0.1s">
+        <div class="number">3</div>
+        <div class="unit">Specialized Programs</div>
+        <div class="desc">High-acuity care, crisis intervention &amp; HT recovery</div>
+      </div>
+      <div class="stat-item reveal" style="transition-delay:0.2s">
+        <div class="number">100%</div>
+        <div class="unit">DFPS Compliant</div>
+        <div class="desc">Fully licensed, certified, and regularly inspected</div>
+      </div>
+      <div class="stat-item reveal" style="transition-delay:0.3s">
+        <div class="number">1st</div>
+        <div class="unit">Priority</div>
+        <div class="desc">Resident safety, dignity, and healing — always above all else</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial-section reveal">
+    <blockquote>
+      The level of care and clinical support at Cool Living Quarters goes above and beyond anything I've seen in a residential placement. My clients feel safe, respected, and genuinely cared for — and the homes are beautiful. It makes a real difference.
+    </blockquote>
+    <cite>— Placing Caseworker, Texas DFPS</cite>
+  </section>
+
+  <div class="mission-banner">
+    <h2>"When clinical expertise meets genuine compassion in a home that feels like home — that's where healing begins."</h2>
+    <p>Ready to place a youth in our program? Our intake team is available around the clock.</p>
+    <a href="referral.html" class="btn btn-navy">Make a Referral</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 <a href="index.html">Cool Living Quarters LLC</a> · All Rights Reserved · Houston, TX · <a href="tel:8442665226">(844) 266-5226</a> · info@coollivingquarters.com</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('mainNav');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    reveals.forEach(r => obs.observe(r));
+  </script>
+</body>
+</html>
